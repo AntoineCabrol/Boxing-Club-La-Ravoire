@@ -1,0 +1,16 @@
+.bclr-c-Page {
+    display: grid;
+    grid-template-areas: 'alert'
+                         'header'
+                         'nav'
+                         'main'
+                         'footer';
+    grid-template-rows: auto auto auto 1fr auto;
+    min-height: 100vh;
+
+    > [role="alert"] { grid-area: alert }
+    header          { grid-area: header }
+    nav             { grid-area: nav }
+    main            { grid-area: main }
+    footer          { grid-area: footer }
+}

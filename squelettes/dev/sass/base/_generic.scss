@@ -1,0 +1,20 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  font: $font_base;
+}
+
+a { color: inherit; }
+
+p {
+  margin: 0;
+  & + &:not(:last-of-type) { margin-bottom: 15px }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

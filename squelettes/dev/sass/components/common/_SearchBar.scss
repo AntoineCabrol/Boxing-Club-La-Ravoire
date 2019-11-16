@@ -1,0 +1,27 @@
+.bclr-c-SearchBar {
+    position: relative;
+    display: flex;
+    border: 1px solid $color_dark;
+    &:focus-within {
+        border-color: $color_red;
+    }
+
+    &-input {
+        flex: 1;
+        height: 30px;
+        padding: 0 10px;
+        border: none;
+    }
+
+    &-btn {
+        padding: 0 10px;
+        color: $color_light;
+        border: none;
+        background-color: $color_dark;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color_red;
+        }
+    }
+}

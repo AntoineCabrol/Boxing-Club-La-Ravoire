@@ -1,0 +1,27 @@
+.bclr-c-Header {
+  text-align: center;
+  background-color: $color_dark;
+  color: $color_light;
+
+  .bclr-u-wrapper {
+    display: inline-block;
+    font-size: 0;
+  }
+
+  &-logo, &-name {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &-name {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 30px;
+  }
+
+  &-slogan {
+    display: block;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,22 @@
+<h2 class="bclr-u-a11hidden">Articles à la une</h2>
+
+<ul class="bclr-c-HomeRecents-list">
+	<BOUCLE_une(ARTICLES) {!par date} {id_mot=1}>
+		<li dir="#LANG_DIR" class="bclr-c-HomeRecents-highlight bclr-u-clearfix">
+			<div class="bclr-c-HomeRecents-highlight-img">[(#LOGO_ARTICLE_RUBRIQUE{#URL_ARTICLE}|image_reduire{420,*})]</div>
+			<a href="#URL_ARTICLE" class="bclr-c-HomeRecents-highlight-title" rel="bookmark">#TITRE</a>
+			<!-- <small class="bclr-c-HomeRecents-highlight-date"><abbr class="published"[ title="(#DATE|date_iso)"]>[(#DATE|affdate_jourcourt)]</abbr>[, <:par_auteur:> (#LESAUTEURS|supprimer_tags)]</small> -->
+			<!-- [<div class="bclr-c-HomeRecents-highlight-extract">(#CHAPO)</div>] -->
+		</li>
+	</BOUCLE_une>
+</ul>
+
+<h2>Notre dernier article</h2>
+<BOUCLE_recent(ARTICLES) {!par date} {0,1}>
+	<div dir="#LANG_DIR" class="bclr-c-HomeRecents-last bclr-u-clearfix">
+		<div class="bclr-c-HomeRecents-last-img">[(#LOGO_ARTICLE_RUBRIQUE{#URL_ARTICLE}|image_reduire{200,*})]</div>
+		<a href="#URL_ARTICLE" class="bclr-c-HomeRecents-last-title" rel="bookmark">#TITRE</a>
+		<small class="bclr-c-HomeRecents-last-date"><abbr class="published"[ title="(#DATE|date_iso)"]>[(#DATE|affdate_jourcourt)]</abbr>[, <:par_auteur:> (#LESAUTEURS|supprimer_tags)]</small>
+		[<div class="bclr-c-HomeRecents-last-extract">(#CHAPO)</div>]
+	</div>
+</BOUCLE_recent>

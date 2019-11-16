@@ -1,0 +1,8 @@
+.bclr-c-AlertOldBrowser {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    @supports(display: grid) {
+        display: none;
+    }
+}

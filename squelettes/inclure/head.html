@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<meta name="author" content="#NOM_SITE_SPIP" />
+	<meta name="keywords" content="moto, motard, colère, motard en colère, colere, motards en colère, ffmc69, ffmc, rhône, rhone, Rhone, Rhône, sécurité routière, route, partage, rails, guillotine, infrastructures, feux de jour, pollution, controle technique, contrôle, motostra, amdm, mutuelle, stop vol, motomag, afdm, formation" />
+
+	[(#ENV{page}|=={'article'}|?{
+		<meta property="og:url"           content="[(#URL_ARTICLE|url_absolue)]" />
+		<meta property="og:type"          content="website" />
+		<meta property="og:title"         content="#TITRE" />
+		<meta property="og:description"   content="[(#INTRODUCTION{150}|attribut_html)]" />
+		<meta property="og:image"         content="[(#LOGO_ARTICLE_RUBRIQUE|extraire_attribut{src}|url_absolue)]" />
+		[<meta name="description" content="(#INTRODUCTION{150}|attribut_html)" />]
+		[<link rel="canonical" href="(#URL_ARTICLE|url_absolue)" />]
+		,
+		<meta name="description" content="[(#INTRODUCTION)]" />
+	})]
+	
+	[(#REM) Lien vers le flux RSS du site ]
+	[<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="(#URL_PAGE{backend})" />]
+
+	[(#REM) Icones ]
+	[<link rel="icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />
+	[<link rel="shortcut icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />]]
+
+	[(#REM) Lien vers le manifest ]
+	<link rel="manifest" href="#CHEMIN{manifest.json}">
+
+	[(#REM) Styles ]
+	<link rel="stylesheet" href="[(#CHEMIN{squelettes/assets/main.css})]" type="text/css"/>
+	[<link rel="stylesheet" href="(#CHEMIN{lib/fullcalendar/fullcalendar.min.css}|direction_css)" type="text/css" />]
+
+	[(#REM) Fonts ]
+
+	
+	<script src="[(squelettes/assets/main.js)]" type="text/javascript"></script>
+
+	[(#REM)
+		Balise permettant aux plugins d'inserer des appels javascript ;
+		4. C'est ici que SPIP va inserer l'appel de la librairie jQuery
+		5. Et appeler a la fin compacte_head pour agreger et compacter tout le head dans des fichiers statiques si l'option est cochee dans Configuration
+	]
+	#INSERT_HEAD
+
+	[(#REM) Scripts ]
+	[<script src="(#CHEMIN{lib/moment/moment-with-locales.min.js})" type="text/javascript"></script>]
+	[<script src="(#CHEMIN{lib/fullcalendar/fullcalendar.min.js})" type="text/javascript"></script>]
+	[<script src="(#CHEMIN{lib/fullcalendar/locale-all.js})" type="text/javascript"></script>]
+
+
+	[(#REM) Fierement fabrique avec SPIP ]
+	<meta name="generator" content="SPIP[ (#SPIP_VERSION)]" />
+
+	[(#REM) Favicon ]
+	[<link rel="icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />
+	[<link rel="shortcut icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />]]
+
+	[(#REM) meta robots ]
+	[<meta name="robots" content="(#ENV{robots})" />]
+	[<meta name="Googlebot" content="(#ENV{robots})" />]
+	[<meta name="Slurp" content="(#ENV{robots})" />]
+	[<meta name="msnbot" content="(#ENV{robots})" />]
+
+	<title>[(#ENV{title}|?{#ENV{title},#NOM_SITE_SPIP})]</title>
+</head>
+
+<body class="bclr-c-Page[ bclr-c-(#ENV{page})]">
+	<div role="alert" class="bclr-c-AlertOldBrowser blcr-u-hspace">
+		<div class="bclr-u-wrapper">
+			Votre navigateur semble trop vieux et du contenu pourrait ne pas s'afficher correctement. <br>Veuillez utiliser un navigateur récent comme Firefox, Google Chrome ou Edge.
+		</div>
+	</div>
+
+	<!-- HEADER -->
+	<header class="clearfix bclr-c-Header blcr-u-hspace">
+		<div class="bclr-u-wrapper">
+			[(#ENV{home,'non'}|=={oui}|?{
+				<div class="bclr-c-Header-logo">[(#LOGO_SITE_SPIP|image_reduire{224,96})]</div>
+				<h1 class="bclr-c-Header-name">
+					#NOM_SITE_SPIP
+					[<p id="slogan" class="bclr-c-Header-slogan">(#SLOGAN_SITE_SPIP)</p>]
+				</h1>
+			,
+				<a rel="start home"
+					class="bclr-c-Header-logo"
+					href="#URL_SITE_SPIP/"
+					title="<:accueil_site:>"
+				>
+					[(#LOGO_SITE_SPIP|image_reduire{224,96})]
+				</a>
+				<strong class="bclr-c-Header-name">
+					#NOM_SITE_SPIP
+					[<p id="slogan" class="bclr-c-Header-slogan">(#SLOGAN_SITE_SPIP)</p>]
+				</strong>
+			})]
+		</div>
+	</header>
+	
+	<!-- Menu -->
+	<B_nav>
+	<nav class="bclr-c-Menu">
+		<ul>
+			<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre}>
+			<li class="nav-item[ (#EXPOSE)][ (#COMPTEUR_BOUCLE|=={1}|oui)first][ (#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui)last]"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+			</BOUCLE_nav>
+		</ul>
+	</nav>
+	</B_nav>
+
+	<!-- MAIN -->
+	<main>

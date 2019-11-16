@@ -1,0 +1,18 @@
+.bclr-c-HomeBreves {
+    grid-area: breves;
+    align-self: start;
+    padding: 0 0 20px 15px;
+    border-left: 11px double $color_bglight;
+
+    &-list {
+        margin-top: 15px;
+        list-style: disclosure-closed inside;
+    }
+
+    &-elem {
+        transition: all $time_basis*0.2;
+        &:hover {
+            color: $color_red;
+        }
+    }
+}
