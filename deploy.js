@@ -1,10 +1,9 @@
 var FtpDeploy = require('ftp-deploy');
 var ftpDeploy = new FtpDeploy();
- 
+
 var config = {
     user: "www.boxingclublxx",
     // password: "password",         // optional, prompted if none given
-    password: "tie7View!",
     host: "ftp.ouvaton.coop",
     port: 21,
     localRoot: __dirname + '/squelettes/assets/',
@@ -14,7 +13,7 @@ var config = {
     deleteRemote: false,             // delete ALL existing files at destination before uploading, if true
     forcePasv: true                  // Passive mode is forced (EPSV command is not sent)
 }
- 
+
  // use with promises
 ftpDeploy.deploy(config)
     .then(res => console.log('finished:', res))

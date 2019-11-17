@@ -1,5 +1,5 @@
 {
-  "name": "boxing-club-la-ravoir",
+  "name": "boxing-club-la-ravoire",
   "version": "1.0.0",
   "description": "",
   "main": "./squelettes/src/js/index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AntoineCabrol/antenneFFMC.git"
+    "url": "git+https://github.com/AntoineCabrol/Boxing-Club-La-Ravoire.git"
   },
   "author": "Antoine Cabrol",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AntoineCabrol/antenneFFMC/issues"
+    "url": "https://github.com/AntoineCabrol/Boxing-Club-La-Ravoire/issues"
   },
-  "homepage": "https://github.com/AntoineCabrol/antenneFFMC#readme",
+  "homepage": "https://github.com/AntoineCabrol/Boxing-Club-La-Ravoire#readme",
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
