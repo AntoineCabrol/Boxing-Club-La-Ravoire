@@ -1,4 +1,55 @@
 .bclr-c-HomeAgenda {
     grid-area: agenda;
     background-color: $color_bglight;
+
+
+  .widget-agenda {
+    position: relative;
+    padding-bottom: 20px;
+
+    &__evenements-liste {
+      height: 120px;
+      margin-right: -16px;
+      overflow-y: scroll;
+      &:empty {
+        background-image: url("../images/index/tyre.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30%;
+        opacity: 0.2;
+      }
+    }
+
+    &__evenement {
+      margin: 0 5px 5px;
+      padding: 8px 20px;
+    	background: rgba(255, 201, 20, 0.3);
+    	border-radius: 4px;
+      &:first-of-type {
+        margin: 0 0 5px;
+      	background: rgba(255, 201, 20, 0.6);
+      }
+
+      &-titre { display: block; }
+      &-date {
+        font-size: $police-taille--petite;
+        color: $couleur-texte--clair;
+      }
+    }
+
+    //&__desc {}
+
+    &__footer {
+    	position: absolute;
+    	bottom: 0;
+    	right: 0;
+    	width: 100%;
+      padding-top: 5px;
+    	text-align: right;
+    	background: $couleur-fond--clair;
+    }
+
+  }
+
+
 }
