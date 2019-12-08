@@ -4,7 +4,7 @@
   "description": "",
   "main": "./squelettes/src/js/index.js",
   "scripts": {
-    "watch": "onchange \"./squelettes/dev/sass/**/*\" -- npm run sass",
+    "watch": "onchange \"./squelettes/dev/sass/**/*\" -- npm run sassDisabled",
     "build": "webpack && echo \"Upload manuel de main.js et autres fichiers modifiés nécessaire.\"",
     "sass": "node-sass ./squelettes/dev/sass/index.scss ./squelettes/assets/main.css && npm run deploy",
     "sassDisabled": "node-sass ./squelettes/dev/sass/index.scss ./squelettes/assets/main.css",
