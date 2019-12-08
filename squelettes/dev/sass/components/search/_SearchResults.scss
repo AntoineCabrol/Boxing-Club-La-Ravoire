@@ -1,0 +1,20 @@
+.bclr-c-SearchResults {
+    text-align: center;
+
+    a:hover { color: $color_red }
+
+    &-header { margin-bottom: 35px }
+
+    &-searchbar {
+        margin: 40px auto 0;
+        max-width: 360px;
+    }
+
+    &-group {
+        &:not(:first-of-type) {
+            margin-top: 30px;
+            padding-top: 13px;
+            border-top: 4px solid $color_bglight;
+        }
+    }
+}

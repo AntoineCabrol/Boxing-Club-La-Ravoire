@@ -1,0 +1,92 @@
+<INCLURE{fond=inclure/head,title=#NOM_SITE_SPIP,page=Recherche,robots=noindex,home=non} />
+
+<nav class="bclr-c-Breadcrumb bclr-u-wrapper" aria-label="Fil d'ariane">
+	<p class="arbo"><a href="#URL_SITE_SPIP/"><:accueil_site:></a> &gt; <:info_rechercher:>[ &gt; <strong class="on">(#RECHERCHE)</strong>]</p>
+</nav>
+
+<div class="bclr-c-SearchResultsWrapper bclr-u-wrapper">
+	[(#REM) Contenu principal : Resultats de la recherche ]
+	<section class="bclr-c-SearchResults">
+		[<header class="bclr-c-SearchResults-header">
+			<h1><:resultats_recherche:></h1>
+			<p class="soustitre">&#171;&nbsp;(#RECHERCHE)&nbsp;&#187;</p>
+		</header>]
+		
+		[(#REM) Articles trouves ]
+		<B_articles>
+		<div class="bclr-c-SearchResults-group bclr-c-SearchResults-articles">
+			#ANCRE_PAGINATION
+			<h2><:articles:> (#GRAND_TOTAL)</h2>
+			<ul class="spip">
+				<BOUCLE_articles(ARTICLES) {recherche} {!par points} {pagination}>
+				<li><a href="#URL_ARTICLE">#TITRE</a></li>
+				</BOUCLE_articles>
+			</ul>
+			[<p class="pagination">(#PAGINATION)</p>]
+		</div>
+		</B_articles>
+		
+		[(#REM) Rubriques trouvees ]
+		<B_rubriques>
+		<div class="bclr-c-SearchResults-group bclr-c-SearchResults-rubriques">
+			#ANCRE_PAGINATION
+			<h2><:rubriques:> (#GRAND_TOTAL)</h2>
+			<ul class="spip">
+				<BOUCLE_rubriques(RUBRIQUES) {recherche} {!par points} {pagination 5}>
+				<li><a href="#URL_RUBRIQUE">#TITRE</a></li>
+				</BOUCLE_rubriques>
+			</ul>
+			[<p class="pagination">(#PAGINATION)</p>]
+		</div>
+		</B_rubriques>
+		
+		[(#REM) Mots-cles trouves ]
+		<B_mots>
+		<div class="bclr-c-SearchResults-group bclr-c-SearchResults-keywords">
+			#ANCRE_PAGINATION
+			<h2><:mots_clefs:> (#GRAND_TOTAL)</h2>
+			<ul class="spip">
+				<BOUCLE_mots(MOTS) {recherche} {!par points} {pagination 5}>
+				<li><a href="#URL_MOT">#TITRE</a></li>
+				</BOUCLE_mots>
+			</ul>
+			[<p class="pagination">(#PAGINATION)</p>]
+		</div>
+		</B_mots>
+		
+		[(#REM) Breves trouvees ]
+		<B_breves>
+		<div class="bclr-c-SearchResults-group bclr-c-SearchResults-breves">
+			#ANCRE_PAGINATION
+			<h2><:breves:breves:> (#GRAND_TOTAL)</h2>
+			<ul class="spip">
+				<BOUCLE_breves(BREVES) {recherche} {!par points} {pagination 5}>
+				<li><a href="#URL_BREVE">#TITRE</a></li>
+				</BOUCLE_breves>
+			</ul>
+			[<p class="pagination">(#PAGINATION)</p>]
+		</div>
+		</B_breves>
+		
+		[(#REM) Sites web trouves ]
+		<B_sites>
+		<div class="bclr-c-SearchResults-group bclr-c-SearchResults-sites">
+			#ANCRE_PAGINATION
+			<h2><:sites_web:> (#GRAND_TOTAL)</h2>
+			<ul class="spip">
+				<BOUCLE_sites(SITES) {recherche} {!par points} {pagination 5}>
+				<li><a href="[(#ID_SYNDIC|generer_url_entite{site,'','',#CONNECT})]">#NOM_SITE</a></li>
+				</BOUCLE_sites>
+			</ul>
+			[<p class="pagination">(#PAGINATION)</p>]
+		</div>
+		</B_sites>
+	</section>
+	
+
+	<div class="bclr-c-SearchResults-searchbar">
+		#FORMULAIRE_RECHERCHE
+	</div>
+</div>
+
+<INCLURE{fond=inclure/footer,self=#SELF} />
