@@ -1,0 +1,10 @@
+.bclr-c-RubriqueArticles {
+    text-align: left;
+
+    + * { margin-top: 20px }
+
+    &-list {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+}

@@ -76,28 +76,30 @@
 	</div>
 
 	<!-- HEADER -->
-	<header class="clearfix bclr-c-Header blcr-u-hspace">
-		<div class="bclr-u-wrapper">
-			[(#ENV{home,'non'}|=={oui}|?{
+	<header class="bclr-c-Header blcr-u-hspace">
+		[(#ENV{home,'non'}|=={oui}|?{
+			<div class="bclr-u-wrapper">
 				<div class="bclr-c-Header-logo">[(#LOGO_SITE_SPIP|image_reduire{224,96})]</div>
 				<h1 class="bclr-c-Header-name">
 					#NOM_SITE_SPIP
 					[<p id="slogan" class="bclr-c-Header-slogan">(#SLOGAN_SITE_SPIP)</p>]
 				</h1>
-			,
-				<a rel="start home"
-					class="bclr-c-Header-logo"
-					href="#URL_SITE_SPIP/"
-					title="<:accueil_site:>"
-				>
+			</div>
+		,
+			<a rel="start home"
+				class="bclr-u-wrapper"
+				href="#URL_SITE_SPIP/"
+				title="<:accueil_site:>"
+			>
+				<div class="bclr-c-Header-logo">
 					[(#LOGO_SITE_SPIP|image_reduire{224,96})]
-				</a>
+				</div>
 				<strong class="bclr-c-Header-name">
 					#NOM_SITE_SPIP
 					[<p id="slogan" class="bclr-c-Header-slogan">(#SLOGAN_SITE_SPIP)</p>]
 				</strong>
-			})]
-		</div>
+			</a>
+		})]
 	</header>
 	
 	<!-- Menu -->

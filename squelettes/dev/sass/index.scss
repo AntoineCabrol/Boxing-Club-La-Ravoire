@@ -42,6 +42,11 @@
 @import "components/sommaire/HomeAgenda";
 @import "components/sommaire/HomeFacebook";
 
+@import "components/rubrique/Rubrique";
+@import "components/rubrique/RubriqueWrapper";
+@import "components/rubrique/RubriqueArticles";
+
+@import "components/article/ListArticle";
 @import "components/article/Article";
 @import "components/article/ArticleGrid";
 @import "components/article/ArticleSearch";
