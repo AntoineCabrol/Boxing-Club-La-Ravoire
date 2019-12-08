@@ -1,0 +1,30 @@
+.bclr-c-Article {
+    grid-area: article;
+
+    &-header {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    &-image {
+        position: relative;
+        display: block;
+        max-width: 640px;
+        margin: 0 auto 15px;
+        &::before {
+            content: '';
+            display: block;
+            padding-bottom: 45%;
+        }
+
+        img {
+            @include centerabsxy;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    &-title {
+        margin: 0 0 10px;
+    }
+}

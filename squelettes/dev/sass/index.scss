@@ -1,5 +1,9 @@
 //@import "~/monModule/style.css";
 
+/*********************************************
+                  SETTINGS
+*********************************************/
+
 @import "abstract/variables";
 @import "abstract/mixins/centerabs";
 
@@ -7,18 +11,25 @@
 @import "base/generic";
 @import "base/fonts";
 
+/*********************************************
+                    UTILS
+*********************************************/
 
 @import "utils/wrapper";
 @import "utils/hspace";
 @import "utils/a11hidden";
 @import "utils/clearfix";
 
+/*********************************************
+                 COMPONENTS
+*********************************************/
 
 @import "components/Page";
 
 @import "components/common/AlertOldBrowser";
 @import "components/common/SearchBar";
 @import "components/common/WidgetAgenda";
+@import "components/common/Breadcrumb";
 @import "components/common/header/Header";
 @import "components/common/header/Menu";
 @import "components/common/footer/Footer";
@@ -30,3 +41,9 @@
 @import "components/sommaire/HomeBreves";
 @import "components/sommaire/HomeAgenda";
 @import "components/sommaire/HomeFacebook";
+
+@import "components/article/Article";
+@import "components/article/ArticleGrid";
+@import "components/article/ArticleSearch";
+@import "components/article/SameSection";
+@import "components/article/Keywords";

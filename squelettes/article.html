@@ -1,0 +1,85 @@
+<BOUCLE_principale(ARTICLES) {id_article}>
+
+	<INCLURE{fond=inclure/head,title=#NOM_SITE_SPIP,page=Home,robots=doindex,home=oui} />
+
+	<nav class="bclr-c-Breadcrumb bclr-u-wrapper" aria-label="Fil d'ariane">
+		<p class="arbo"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><BOUCLE_ariane(HIERARCHIE){id_article}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</p>
+	</nav>
+
+	<div class="bclr-c-ArticleGrid bclr-u-wrapper">
+		
+		<article class="bclr-c-Article">
+			<header class="bclr-c-Article-header">
+				[<p class="bclr-c-Article-surtitle">(#SURTITRE)</p>]
+				[<div class="bclr-c-Article-image">(#LOGO_ARTICLE_RUBRIQUE|image_reduire{640,*})</div>]
+				<h1 class="bclr-c-Article-title">#TITRE</h1>
+				[<p class="bclr-c-Article-subtitle">(#SOUSTITRE)</p>]
+				<p class="bclr-c-Article-infos">
+					<abbr class="bclr-c-Article-date" title="[(#DATE|date_iso)]">[(#DATE|nom_jour) ][(#DATE|affdate)]</abbr>
+					[<span class="bclr-c-Article-sep">, </span>
+					<span class="bclr-c-Article-authors"><:par_auteur:> (#LESAUTEURS)</span>]
+				</p>
+				[(#REM) Inclure le modele des liens de traductions ]
+				#MODELE{article_traductions}
+			</header>
+			
+			[<div class="bclr-c-Article-chapo">(#CHAPO|image_reduire{672,*})</div>]
+			[<div class="bclr-c-Article-content bclr-c-Wysiwyg">(#TEXTE|image_reduire{672,*})</div>]
+		
+			<footer class="bclr-c-Article-footer">
+				[<hr /><p class="bclr-c-Article-footer-link"><:voir_en_ligne:> : <a href="(#URL_SITE)">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+				[<div class="bclr-c-Article-footer-postscriptum"><hr />(#PS|image_reduire{672,*})</div>]
+			</footer>
+
+			<aside class="bclr-c-Article-aside">
+				<div class="bclr-c-Article-portfolio">
+					[(#REM) Gestion du portfolio et des documents ]
+					[(#INCLURE{fond=inclure/documents,id_article,id_rubrique='',env})]
+				</div>
+		
+				<div class="bclr-c-Article-petition">
+					[(#REM) Petition :
+					La petition ayant une PAGINATION il faut absolument {env}
+					et pourquoi pas ajax
+					][(#PETITION|oui)<INCLURE{fond=inclure/petition,id_article,env,ajax} />]
+				</div>
+				
+				[<div class="bclr-c-Article-notes"><hr />(#NOTES)</div>]
+				
+				<div class="bclr-c-Article-forum">
+					[(#REM) Forum de l'article ]
+					<INCLURE{fond=inclure/forum,id_article} />
+					[<h2 class="forum-titre"><:forum:form_pet_message_commentaire:></h2>
+					(#FORMULAIRE_FORUM)]
+				</div>
+			</aside>
+		</article>
+	
+		<div class="bclr-c-ArticleSearch">
+			#FORMULAIRE_RECHERCHE
+		</div>
+	
+		<aside class="bclr-c-SameSection">
+			[(#REM) Articles dans la meme rubrique ] 
+			<B_articles_rubrique>
+			<div class="menu">
+				<h2><:meme_rubrique:></h2>
+				<ul>
+					<BOUCLE_articles_rubrique(ARTICLES) {id_rubrique} {!par date} {0,10}>
+					<li><a href="#URL_ARTICLE"[ class="(#EXPOSE)"]>#TITRE</a></li>
+					</BOUCLE_articles_rubrique>
+				</ul>
+			</div>
+			</B_articles_rubrique>
+		</aside>
+	
+		<div class="bclr-c-Keywords">
+			[(#REM) Menu de navigation mots-cles ]
+			#MODELE{article_mots}
+		</div>
+
+	</div>
+
+	<INCLURE{fond=inclure/footer,self=#SELF} />
+
+</BOUCLE_principale>

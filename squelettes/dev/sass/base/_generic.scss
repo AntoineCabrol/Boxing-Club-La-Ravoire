@@ -8,6 +8,10 @@ body {
 
 a { color: inherit; }
 
+h1 {
+  line-height: 1;
+}
+
 p {
   margin: 0;
   & + &:not(:last-of-type) { margin-bottom: 15px }
