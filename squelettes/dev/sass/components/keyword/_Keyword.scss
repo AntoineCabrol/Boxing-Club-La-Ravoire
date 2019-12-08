@@ -1,0 +1,12 @@
+.bclr-c-Keyword {
+    margin-bottom: 30px;
+    text-align: center;
+
+    &-group {
+        &:not(:first-of-type) {
+            margin-top: 30px;
+            padding-top: 13px;
+            border-top: 4px solid $color_bglight;
+        }
+    }
+}
