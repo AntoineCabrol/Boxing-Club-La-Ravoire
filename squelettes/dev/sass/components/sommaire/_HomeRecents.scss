@@ -5,7 +5,7 @@
     &-list {
         display: flex;
         flex-flow: wrap;
-        margin: -15px -5px 10px;
+        margin: -15px -5px 40px;
     }
 
     &-highlight {
@@ -20,7 +20,7 @@
             &::before {
                 content: '';
                 display: block;
-                padding-bottom: 75%;
+                padding-bottom: 55%;
             }
             a {
                 display: block;
@@ -31,7 +31,7 @@
                 height: 100%;
                 overflow: hidden;
                 transition: all $time_basis*0.2;
-                #{$p}:hover & { opacity: 0.7 }
+                #{$p}:hover &, #{$p}:focus-within & { opacity: 0.7 }
                 
                 img {
                     @include centerabsxy;
@@ -54,7 +54,7 @@
             overflow: hidden;
             transition: all $time_basis*0.2;
 
-            #{$p}:hover & { color: $color_red }
+            #{$p}:hover &, #{$p}:focus-within & { color: $color_red }
         }
     }
 

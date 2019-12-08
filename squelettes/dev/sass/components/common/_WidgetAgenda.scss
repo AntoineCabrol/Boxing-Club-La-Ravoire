@@ -1,0 +1,40 @@
+.bclr-c-WidgetAgenda {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    &-header {}
+
+    &-events {
+        max-height: 290px;
+        overflow: auto;
+    }
+    &-event {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 8px 10px;
+        border: 2px solid $color_textlight;
+        border-radius: $border_radius;
+        &:first-child {
+            background-color: $color_bglight;
+        }
+        &:not(:first-child) {
+            margin: 5px 5px 0;
+            border-top: 1px solid $color_textlight;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+        }
+        &-title {
+            font-size: 16px;
+            margin: 3px 0 5px;  
+        }
+        &-date {}
+        &-description {}
+    }
+
+    &-footer { margin-top: 14px }
+}

@@ -1,0 +1,15 @@
+.bclr-c-Footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: $color_dark;
+    color: white;
+
+    .generator img {
+        display: block;
+        margin: 8px auto 0;
+        width: 37px;
+        height: auto;
+    }
+}

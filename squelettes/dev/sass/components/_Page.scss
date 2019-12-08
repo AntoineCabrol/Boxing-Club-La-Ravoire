@@ -9,8 +9,8 @@
     min-height: 100vh;
 
     > [role="alert"] { grid-area: alert }
-    header          { grid-area: header }
-    nav             { grid-area: nav }
-    main            { grid-area: main }
-    footer          { grid-area: footer }
+    > header          { grid-area: header }
+    > nav             { grid-area: nav }
+    > main            { grid-area: main }
+    > footer          { grid-area: footer }
 }

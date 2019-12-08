@@ -2,6 +2,8 @@
     position: relative;
     display: flex;
     border: 1px solid $color_dark;
+    border-radius: $border_radius;
+    overflow: hidden;
     &:focus-within {
         border-color: $color_red;
     }

@@ -1,12 +1,30 @@
 .bclr-c-HomeChapo {
     display: block;
+    margin: 20px auto 30px;
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: center;
+    overflow: hidden;
 
     .bclr-u-wrapper {
         display: inline-block;
         // text-align: left;
         max-width: 520px;
+        &::before, &::after {
+            position: absolute;
+            font-size: 150px;
+            line-height: 30px;
+            color: $color_textlight;
+        }
+        &::before {
+            content: '“';
+            top: 20px;
+            right: calc(100% + 20px);
+        }
+        &::after {
+            content: '„';
+            bottom: 20px;
+            left: calc(100% + 20px);
+        }
     }
 }

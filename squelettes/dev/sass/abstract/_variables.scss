@@ -5,13 +5,17 @@ $font_family_base : Arial, sans-serif;
 $font_base        : #{$font_size_base}/#{$font_lh_base} $font_family_base;
 
 // Colors
-$color_dark    : #151515;
-$color_bglight : #f7f7f7;
-$color_light   : white;
-$color_red     : #dc291e;
+$color_dark      : #151515;
+$color_textlight : #dfdfdf;
+$color_bglight   : #f7f7f7;
+$color_light     : white;
+$color_red       : #dc291e;
 
 // Animations
 $time_basis : 1s;
+
+// Borders
+$border_radius: 4px;
 
 // Breakpoints
 $breakpoints: (
