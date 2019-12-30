@@ -1,0 +1,58 @@
+
+<BOUCLE_principale(BREVES) {id_breve}>
+	#SET{titre_part1, (#TITRE|couper{80}|textebrut)}
+	#SET{titre_part2, (#NOM_SITE_SPIP|textebrut)}
+	<INCLURE{fond=inclure/head,title=#GET{titre_part1} - #GET{titre_part2},page=Breve,robots=doindex,home=non} />
+
+	<nav class="bclr-c-Breadcrumb bclr-u-wrapper" aria-label="Fil d'ariane">
+		<p class="arbo"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><BOUCLE_ariane(HIERARCHIE){id_breve}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</p>
+	</nav>
+
+	<div class="bclr-c-ArticleGrid bclr-u-wrapper">
+
+		<article class="bclr-c-Article">
+			<header class="bclr-c-Article-header">
+				[<div class="bclr-c-Article-image">(#LOGO_BREVE_RUBRIQUE|image_reduire{640,*})</div>]
+				<h1 class="bclr-c-Article-title">#TITRE</h1>
+				<p class="bclr-c-Article-infos">
+					<abbr class="bclr-c-Article-date" title="[(#DATE|date_iso)]">[(#DATE|nom_jour) ][(#DATE|affdate)]</abbr>
+				</p>
+			</header>
+
+			[<div class="bclr-c-Article-content bclr-c-Wysiwyg">(#TEXTE|image_reduire{672,*})</div>]
+
+			<footer class="bclr-c-Article-footer">
+				[<hr /><p class="bclr-c-Article-footer-link"><:voir_en_ligne:> : <a href="(#URL_SITE)">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+			</footer>
+		</article>
+
+		<div class="bclr-c-ArticleSearch">
+			#FORMULAIRE_RECHERCHE
+		</div>
+
+		<aside class="bclr-c-SameSection">
+			[(#REM) Breves dans la meme rubrique ]
+			<B_breves>
+			<div class="bclr-c-HomeBreves">
+				<h2>📮 <:autres_breves:></h2>
+				<ul class="bclr-c-HomeBreves-list">
+					<BOUCLE_breves(BREVES) {id_rubrique} {!par date} {0,10}>
+						<li class="bclr-c-HomeBreves-elem">
+							<a href="#URL_BREVE">#TITRE</a>
+						</li>
+					</BOUCLE_breves>
+				</ul>
+			</div>
+			</B_breves>
+		</aside>
+
+		<div class="bclr-c-Keywords">
+			[(#REM) Menu de navigation mots-cles ]
+			#MODELE{article_mots}
+		</div>
+
+	</div>
+
+	<INCLURE{fond=inclure/footer,self=#SELF} />
+
+</BOUCLE_principale>
