@@ -8,20 +8,30 @@
 	<meta name="author" content="#NOM_SITE_SPIP" />
 	<meta name="keywords" content="moto, motard, colère, motard en colère, colere, motards en colère, ffmc69, ffmc, rhône, rhone, Rhone, Rhône, sécurité routière, route, partage, rails, guillotine, infrastructures, feux de jour, pollution, controle technique, contrôle, motostra, amdm, mutuelle, stop vol, motomag, afdm, formation" />
 
-	[(#ENV{page}|=={'article'}|?{
+	[(#ENV{page}|=={'article'}|oui)
 		<meta property="og:url"           content="[(#URL_ARTICLE|url_absolue)]" />
 		<meta property="og:type"          content="website" />
 		<meta property="og:title"         content="#TITRE" />
 		<meta property="og:description"   content="[(#INTRODUCTION{150}|attribut_html)]" />
 		<meta property="og:image"         content="[(#LOGO_ARTICLE_RUBRIQUE|extraire_attribut{src}|url_absolue)]" />
-		[<meta name="description" content="(#INTRODUCTION{150}|attribut_html)" />]
 		[<link rel="canonical" href="(#URL_ARTICLE|url_absolue)" />]
-		,
-		<meta name="description" content="[(#INTRODUCTION)]" />
-	})]
-	
+	[(#ENV{page}|=={'breve'}|oui)
+		<meta property="og:url"           content="[(#URL_BREVE|url_absolue)]" />
+		<meta property="og:type"          content="website" />
+		<meta property="og:title"         content="#TITRE" />
+		<meta property="og:description"   content="[(#INTRODUCTION{150}|attribut_html)]" />
+		<meta property="og:image"         content="[(#LOGO_BREVE_RUBRIQUE|extraire_attribut{src}|url_absolue)]" />
+		[<link rel="canonical" href="(#URL_BREVE|url_absolue)" />]
+	)]
+
+	[<meta name="description" content="(#INTRODUCTION{150}|attribut_html)" />]
+
 	[(#REM) Lien vers le flux RSS du site ]
-	[<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="(#URL_PAGE{backend})" />]
+	[(#ENV{page}|=={'breve'}|?{
+		<link rel="alternate" type="application/rss+xml" title="<:dernieres_breves:>" href="#URL_PAGE{backend-breves}" />
+		,
+		<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="#URL_PAGE{backend}" />
+	})]
 
 	[(#REM) Icones ]
 	[<link rel="icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />
@@ -36,7 +46,7 @@
 
 	[(#REM) Fonts ]
 
-	
+
 	<script src="[(squelettes/assets/main.js)]" type="text/javascript"></script>
 
 	[(#REM)
@@ -101,7 +111,7 @@
 			</a>
 		})]
 	</header>
-	
+
 	<!-- Menu -->
 	<B_nav>
 	<nav class="bclr-c-Menu">
