@@ -1,8 +1,7 @@
 
 <BOUCLE_principale(BREVES) {id_breve}>
-	#SET{titre_part1, (#TITRE|couper{80}|textebrut)}
-	#SET{titre_part2, (#NOM_SITE_SPIP|textebrut)}
-	<INCLURE{fond=inclure/head,title=#GET{titre_part1} - #GET{titre_part2},page=Breve,robots=doindex,home=non} />
+	#SET{titre, (#TITRE|couper{80}|textebrut)}
+	<INCLURE{fond=inclure/head,title=#GET{titre},page=breve,robots=doindex,home=non} />
 
 	<nav class="bclr-c-Breadcrumb bclr-u-wrapper" aria-label="Fil d'ariane">
 		<p class="arbo"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><BOUCLE_ariane(HIERARCHIE){id_breve}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</p>

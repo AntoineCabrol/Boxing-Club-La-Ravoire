@@ -1,42 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-[(#REM) Cf.: http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
-]<!--[if lt IE 7 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie6"> <![endif]-->
-<!--[if IE 7 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie7"> <![endif]-->
-<!--[if IE 8 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie8"> <![endif]-->
-<!--[if IE 9 ]> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js ie ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html dir="#LANG_DIR" lang="#LANG" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js"> <!--<![endif]-->
-<head>
-	<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
-	<title><:plan_site:> - [(#NOM_SITE_SPIP|textebrut)]</title>
-	[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|attribut_html)" />]
-	<INCLURE{fond=inclure/head,robots=none} />
-</head>
+<INCLURE{fond=inclure/head,title=Agenda,page=agenda,robots=#CONST{_PREPROD}|?{noindex,doindex}} />
 
-<body class="pas_surlignable page_plan">
-<div class="bclr-c-ArticleGrid bclr-u-wrapper">
+<nav class="bclr-c-Breadcrumb bclr-u-wrapper" aria-label="Fil d'ariane">
+	<p class="arbo"><a href="#URL_SITE_SPIP/"><:accueil_site:></a> &gt; <a href="/spip.php?page=agenda">Agenda</a></p>
+</nav>
 
-	<div class="main">
-		<div class="bclr-c-ArticleGrid bclr-u-wrapper">
-		<div class="content" id="content">
-			<p class="arbo"><a href="#URL_SITE_SPIP/"><:accueil_site:></a> &gt; <strong class="on"><:plan_site:></strong></p>
+<div class="bclr-c-RubriqueWrapper bclr-u-wrapper">
+	<section class="bclr-c-Rubrique">
+		<header class="bclr-c-Rubrique-header">
+			<h1 class="bclr-c-Rubrique-title"><:plan_site:></h1>
+		</header>
+		#MODELE{plan}
+	</section>
 
-			<div class="cartouche">
-				<h1><:plan_site:></h1>
-			</div>
-
-			#MODELE{plan}
-
-		</div><!--.content-->
-		</div><!--.wrapper-->
-
-		<div class="bclr-c-ArticleSearch">
-			<INCLURE{fond=inclure/navsub} />
-			#FORMULAIRE_RECHERCHE
-		</div><!--.aside-->
-	</div><!--.main-->
+	<div class="bclr-c-ArticleSearch">
+		#FORMULAIRE_RECHERCHE
+	</div>
+</div>
 
 	<INCLURE{fond=inclure/footer,self=#SELF} />
-
-</div><!--.page-->
-</body>
-</html>

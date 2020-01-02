@@ -1,7 +1,7 @@
 <BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+	#SET{titre, (#TITRE|couper{80}|textebrut)}
+	<INCLURE{fond=inclure/head,title=#GET{titre},page=rubrique,robots=doindex,home=non} />
 
-	<INCLURE{fond=inclure/head,title=#NOM_SITE_SPIP,page=Rubrique,robots=doindex,home=non} />
-	
 	<nav class="bclr-c-Breadcrumb bclr-u-wrapper" aria-label="Fil d'ariane">
 		<p class="arbo"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><BOUCLE_ariane(HIERARCHIE){id_rubrique}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></BOUCLE_ariane>[ &gt; <strong class="on">(#TITRE|couper{80})</strong>]</p><!--.arbo-->
 	</nav>
@@ -21,7 +21,7 @@
 			<div class="bclr-c-RubriqueArticles">
 				#ANCRE_PAGINATION
 				<ul class="bclr-c-RubriqueArticles-list">
-					<BOUCLE_articles(ARTICLES) {id_rubrique} {!par date} {pagination}>				
+					<BOUCLE_articles(ARTICLES) {id_rubrique} {!par date} {pagination}>
 						<li dir="#LANG_DIR" class="bclr-c-ListArticle bclr-u-clearfix">
 							<div class="bclr-c-ListArticle-img">[(#LOGO_ARTICLE_RUBRIQUE{#URL_ARTICLE}|image_reduire{200,*})]</div>
 							<a href="#URL_ARTICLE" class="bclr-c-ListArticle-title" rel="bookmark">#TITRE</a>
@@ -82,7 +82,7 @@
 
 			[<div class="bclr-c-RubriquesNotes"><hr />(#NOTES)</div>]
 		</section>
-		
+
 		[(#REM) Menu de navigation mots-cles ]
 		<B_mots>
 		<div class="bclr-c-Keywords">
