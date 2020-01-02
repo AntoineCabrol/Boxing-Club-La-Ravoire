@@ -117,9 +117,10 @@
 	<B_nav>
 	<nav class="bclr-c-Menu">
 		<ul>
-			<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre}>
+			<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre} {id_rubrique!=12} {id_rubrique!=4}>
 			<li class="nav-item[ (#EXPOSE)][ (#COMPTEUR_BOUCLE|=={1}|oui)first][ (#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui)last]"><a href="#URL_RUBRIQUE">#TITRE</a></li>
 			</BOUCLE_nav>
+			<li><a href="https://boxingclublaravoire.fr/spip.php?page=contact">Nous contacter</a></li>
 		</ul>
 	</nav>
 	</B_nav>
