@@ -8,9 +8,10 @@
 				<br /><a rel="contents" href="#URL_PAGE{plan}" class="first"><:plan_site:></a>[
 				(#SESSION{id_auteur}|non) | <a href="[(#URL_PAGE{login}|parametre_url{url,#SELF})]" rel="nofollow" class='login_modal'><:lien_connecter:></a>][
 				(#AUTORISER{ecrire})| <a href="#CONST{_DIR_RESTREINT_ABS}"><:espace_prive:></a>][
-				(#SESSION{id_auteur}|oui) | <a href="#URL_LOGOUT" rel="nofollow"><:icone_deconnecter:></a>] | 
+				(#SESSION{id_auteur}|oui) | <a href="#URL_LOGOUT" rel="nofollow"><:icone_deconnecter:></a>] |
 				<a rel="nofollow" href="#URL_PAGE{contact}"><:contact:></a> |
 				<a href="#URL_PAGE{backend}" rel="alternate" title="<:syndiquer_site:>" class="last">RSS&nbsp;2.0</a>
+				<a href="http://ouvaton.coop" title="vers ouvaton.coop hébergeurs hébergés"><img src="https://boxingclublaravoire.fr/88x31rouge.png" border="0" alt="Ouvaton.coop" /></a>
 			</p>
 			[<small class="generator"><a href="https://www.spip.net/" rel="generator" title="<:site_realise_avec_spip:>" class="generator spip_out">(#CHEMIN{spip.png}|balise_img|inserer_attribut{alt,SPIP})</a></small>]
 		</div>
