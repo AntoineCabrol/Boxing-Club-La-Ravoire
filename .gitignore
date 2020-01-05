@@ -1,3 +1,4 @@
 node_modules/
 squelettes/assets/
-deploy.js
+/deploy.js
+/npm-debug.log

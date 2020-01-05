@@ -1,4 +1,4 @@
-import '../sass/global.scss';
+import '../sass/index.scss';
 // import Boxheart from './boxheart';
 
 class App {

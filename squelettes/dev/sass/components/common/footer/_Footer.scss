@@ -6,10 +6,19 @@
     background-color: $color_dark;
     color: white;
 
-    .generator img {
-        display: block;
-        margin: 8px auto 0;
-        width: 37px;
-        height: auto;
+    &-logos {
+      margin-top: 7px;
+      > * {
+        display: inline-block;
+        vertical-align: middle;
+        * { display: block }
+      }
+      > * + * { margin-left: 6px }
+
+      .spip img {
+          display: block;
+          width: 37px;
+          height: auto;
+      }
     }
 }

@@ -1,0 +1,34 @@
+
+#SET{titre, Erreur 404}
+<INCLURE{fond=inclure/head,title=#GET{titre},page=404,robots=noindex,home=non} />
+
+<nav class="bclr-c-Breadcrumb bclr-u-wrapper" aria-label="Fil d'ariane">
+	<p class="arbo"><a href="#URL_SITE_SPIP/"><:accueil_site:></a> &gt; <strong class="on">#GET{titre}</strong></p><!--.arbo-->
+</nav>
+
+
+<div class="bclr-c-RubriqueWrapper bclr-u-wrapper">
+	<section class="bclr-c-Rubrique">
+		<header class="bclr-c-Rubrique-header">
+			<h1 class="bclr-c-Rubrique-title">#GET{titre}</h1>
+			<p>
+				[(#ENV{erreur}|non)
+					[(#ENV{fond_erreur}|=={article}|oui)<:aucun_article:>]
+					[(#ENV{fond_erreur}|=={rubrique}|oui)<:aucune_rubrique:>]
+					[(#ENV{fond_erreur}|=={breve}|oui)<:aucune_breve:>]
+					[(#ENV{fond_erreur}|=={auteur}|oui)<:aucun_auteur:>]
+					[(#ENV{fond_erreur}|=={site}|oui)<:aucun_site:>]
+					[(#ENV{fond_erreur}|=={forum}|oui)<:forum:aucun_message_forum:>]
+				]
+				Vous vous êtes perdus<br>
+				[(#ENV{erreur})]
+			</p>
+		</header>
+	</section>
+
+	<div class="bclr-c-SearchResults-searchbar">
+		#FORMULAIRE_RECHERCHE
+	</div>
+</div>
+
+<INCLURE{fond=inclure/footer,self=#SELF} />
